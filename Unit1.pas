@@ -853,7 +853,8 @@ begin
          1: radioQrzCqCom.Checked := True;
       end;
 
-      editLoginID.Text := ini.ReadString('SETTINGS', 'LoginID', '');
+      editLoginID.Text := ini.ReadString('SETTINGS', 'UserID', '');
+      editPassword.Text := ini.ReadString('SETTINGS', 'Password', '');
 
       editCabrilloFile.Text := ini.ReadString('SETTINGS', 'CabrilloFile', '');
       editClusterFile.Text := ini.ReadString('SETTINGS', 'ClusterLogFile', '');
@@ -882,7 +883,8 @@ begin
       if radioQrzCqCom.Checked = True then n := 1;
       ini.WriteInteger('SETTINGS', 'SITE', n);
 
-      ini.WriteString('SETTINGS', 'LoginID', editLoginID.Text);
+      ini.WriteString('SETTINGS', 'UserID', editLoginID.Text);
+      ini.WriteString('SETTINGS', 'Password', editPassword.Text);
 
       ini.WriteString('SETTINGS', 'CabrilloFile', editCabrilloFile.Text);
       ini.WriteString('SETTINGS', 'ClusterLogFile', editClusterFile.Text);
